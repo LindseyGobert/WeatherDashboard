@@ -13,7 +13,60 @@
         <div class="container">
           <h1 class="display-6" style="text-align: center; color: white;">Weather Dashboard</h1>
         </div>
-      </div>
+    </div>
+
+    <!-- <div class="city"></div>
+    <div class="temp"></div>
+    <div class="humidity"></div>
+    <div class="wind"></div>
+    <div class="uvIndex"></div> -->
+    
+    <div class="conatiner">
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript">
+
+        var APIKey = "ff4245b646a4fde6afc3ff87b7f41980";
+        
+        var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=Dallas,Texas&appid=" + APIKey;
+
+        $.ajax({
+            url: queryURL, 
+            method: "GET"
+            }).then(function (response) {
+
+          
+          $(`<div class="card">
+            <div class="card-body">
+                <h4 class="card-title">${response.name}</h4>
+                <p class="card-text">
+                  temp: ${((response.main.temp - 273.15)* 1.80 + 32).toFixed(2)}  
+                </p>
+                <p class="card-text">
+                humidity: ${response.main.humidity}
+                </p>
+                <p class="card-text">
+                wind: ${response.wind.speed}
+                </p>
+                <a href="#!" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>`).appendTo(".container")
+          
+      
+
+            
+        })
+    
+    
+    
+    
+    
+    
+    
+    
+    </script>
 
 
 
@@ -26,3 +79,25 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//   $(".city").text(response.name);
+//   $(".temp").text(((response.main.temp - 273.15)* 1.80 + 32).toFixed(2));
+//   $(".humidity").text(response.main.humidity);
+//   $(".wind").text(response.wind.speed); 
+    // console.log(response.name);
+    // console.log(((response.main.temp - 273.15)* 1.80 + 32).toFixed(2));
+    // console.log(response.main.humidity);
+    // console.log(response.wind.speed);
