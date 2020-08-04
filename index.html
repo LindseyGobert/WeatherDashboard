@@ -50,14 +50,47 @@
                 <p class="card-text">
                 wind: ${response.wind.speed}
                 </p>
-                <a href="#!" class="btn btn-primary">Go somewhere</a>
             </div>
         </div>`).appendTo(".container")
           
-      
-
-            
         })
+      
+            let forcastURL = "https://api.openweathermap.org/data/2.5/forecast?q=Dallas,us&appid=" + APIKey;
+
+            $.ajax({
+                url: forcastURL,
+                method: "GET"
+            }).then(function (response) {
+                console.log(response)
+
+                $(`<div class="row">
+                    <div class="col-sm-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">${response.dt_txt}</h5>
+                                <p class="card-text">
+                                Temp: ${response.main.temp}
+                                </p>
+                                <p class="card-text">
+                                Temp: ${response.main.humidity}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Special title treatment</h5>
+                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>`).appendTo(".container")
+
+
+            })
+            
     
     
     
@@ -93,11 +126,11 @@
 
 
 
-//   $(".city").text(response.name);
+<!-- //   $(".city").text(response.name);
 //   $(".temp").text(((response.main.temp - 273.15)* 1.80 + 32).toFixed(2));
 //   $(".humidity").text(response.main.humidity);
 //   $(".wind").text(response.wind.speed); 
     // console.log(response.name);
     // console.log(((response.main.temp - 273.15)* 1.80 + 32).toFixed(2));
     // console.log(response.main.humidity);
-    // console.log(response.wind.speed);
+    // console.log(response.wind.speed); -->
