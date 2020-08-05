@@ -92,18 +92,7 @@ $("#cityList").on("click", fiveDayForecast);
     
     
     
-    // function renderWeather () {
-        
-        
-    //         let cityName = $("#currentCity").text(response.name)
-    //         let cityTemp = $("#currentTemp").text("Temp: " + response.main.temp)
-    //         let cityHumidity = $("#currentHumidity").text("Humidity: " + response.main.humidity)
-    //         let cityWind = $("#currentWind").text("Wind Speed: " + response.wind.speed) 
-    //         let cityWeather = $("#Weather")
-    //         cityWeather.append(cityName, cityTemp, cityHumidity, cityWind)
-    //     })
-    // };
-    // renderWeather();
+
         
     
         
